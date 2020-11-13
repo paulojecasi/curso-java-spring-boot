@@ -98,11 +98,17 @@ a.nav-item:hover{
 }
 
 
-
 .container{
 	margin-top: 50px;
 }
 
+.bt-salvar-voltar{
+	padding: 30px 0px 40px 0px;
+}
+
+.bt-salvar-voltar button{
+	width: 180px;
+}
 
 
 /*============================  responsividade ================================ */
@@ -127,6 +133,19 @@ a.nav-item:hover{
 	
 	.pj-container{
 		margin-top: 1px;
+	}
+	
+	.bt-salvar-voltar{
+		padding: 30px 0px 40px 0px;
+		margin-left: 20px;
+	}
+
+	.bt-salvar-voltar button{
+		width: 150px;
+	}
+	
+	.bt-salvar-voltar a{
+		margin-left: 20px;
 	}
 	
 	

@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import br.com.alunos.model.Aluno;
 
-public interface AddAlunoDao extends JpaRepository<Aluno, Integer> {
+public interface CadastroAlunosDao extends JpaRepository<Aluno, Integer> {
 
 }

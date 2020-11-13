@@ -36,7 +36,7 @@
 				<div class="row">
 					<div class="col-md-6 form-group offset-md-2"> 
 						<label> Selecione o Curso: </label>
-						<select class="form-control"> 
+						<select class="form-control" th:field="*{curso}"> 
 							<option th:each="var_curso : ${T(br.com.alunos.Enums.Curso).values()}"
 								th:value="${var_curso}" th:text="${var_curso}"> 
 							</option>
@@ -48,7 +48,7 @@
 				<!-- 				Gerar Matricula -->
 				<div class="row">
 					<div class="col-md-6 form-group offset-md-2"> 
-						<label> Gerar Matricula: </label>
+						<label> Matricula: </label>
 						<input class="form-control" id="matricula" th:field="*{matricula}">
 						<button class= "btn btn-dark"
 								style="margin-top: 10px"
@@ -63,7 +63,7 @@
 				<div class="row">
 					<div class="col-md-6 form-group offset-md-2"> 
 						<label> Status: </label>
-						<select class="form-control"> 
+						<select class="form-control" th:field="*{status}"> 
 							<option th:each="var_status : ${T(br.com.alunos.Enums.Status).values()}"
 								th:value="${var_status}" th:text="${var_status}"> 
 							</option>
@@ -76,7 +76,7 @@
 				<div class="row">
 					<div class="col-md-6 form-group offset-md-2"> 
 						<label> Turno: </label>
-						<select class="form-control"> 
+						<select class="form-control" th:field="*{turno}"> 
 							<option th:each="var_turno : ${T(br.com.alunos.Enums.Turno).values()}"
 								th:value="${var_turno}" th:text="${var_turno}"> 
 							</option>
@@ -85,9 +85,23 @@
 					</div>
 				</div>
 				
+				<div class="row bt-salvar-voltar">
+					<button type="submit" class="btn btn-success offset-md-3">
+					 	Salvar
+					 </button>
+					 
+					 <a th:href="@{/}"> 
+					 	<button type="button" class="btn btn-outline-danger offset-md-1">
+					 		Voltar
+					 	</button>
+					 </a>
+				</div>
+				
 			</form>
 		
 	</div>
+	
+	<div th:replace="fragmentos/fragmentos :: rodape"></div>
 
 	<script src="js/main.js"> </script>
 	<script src="/webjars/jquery/3.5.1/jquery.min.js"> </script>

@@ -2,6 +2,8 @@ package br.com.alunos.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -22,15 +24,18 @@ public class Aluno {
 	private String nome;
 	
 	@Column(name = "curso",length = 50)
+	@Enumerated(EnumType.STRING)
 	private Curso curso;
 	
 	@Column(name = "matricula",length = 15)
 	private String matricula;
 	
 	@Column(name = "status",length = 20)
+	@Enumerated(EnumType.STRING)
 	private Status status;
 	
 	@Column(name = "turno",length = 20)
+	@Enumerated(EnumType.STRING)
 	private Turno turno;
 
 	
