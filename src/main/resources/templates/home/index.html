@@ -12,52 +12,16 @@
 <script src="https://kit.fontawesome.com/006642858d.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&family=Work+Sans&display=swap" rel="stylesheet">
 
-
 </head>
 <body>
 
-	<script src="/webjars/jquery/3.5.1/jquery.min.js"> </script>
-	<script src="/webjars/bootstrap/js/bootstrap.min.js"> </script>
+
 
 <!-- 	<h1> TESTE SPRING 3456 </h1> -->
 <!-- 	<h3 th:text="${msg}"></h3> -->
 	
-	<header> 
-		<nav class="navbar navbar-expand-lg navbar-dark">
-			<a class="navbar-brand" href="#">
-		 		<img src="img/logo-header-site.png"/>
-			</a>
-		 	
-			<button class="navbar-toggler" 
-		 		type="button"
-		 		data-toggle="collapse"
-		 		data-target="#navMobile">
-				<span class="navbar-toggler-icon"></span>
-		 			
-			</button>
-		 	
-			<div id="navMobile" class="navbar-collapse collapse justify-content-end">
-		 		<a class="nav-item nav-link">
-		 			<i class="fas fa-home"></i>
-		 			 Home
-		 		</a>
-		 		<a class="nav-item nav-link">
-		 			<i class="fas fa-user-graduate"></i>
-		 			 Cadastrar Aluno
-		 		</a>
-		 		<a class="nav-item nav-link">
-		 			<i class="fas fa-search"></i> 
-		 			Pesquisar Aluno
-		 		</a>
-		 		<a class="nav-item nav-link btn-danger">
-		 			<i class="fas fa-times"></i>
-		 			 Sair
-		 		</a>
-		 	
-			</div>
-	 
-		</nav>
-	</header>
+
+	<div th:replace="fragmentos/fragmentos :: cabecalho"> </div>
 	
 	<section class="pj-section" style="background-image: url('img/bg-index.jpg');"> 
 	
@@ -68,7 +32,10 @@
 		
 			<div class="botoes">
 				<div class="bt" id="bt-cadastrar">
-					<button class="btn btn-primary"> CADASTRAR ALUNO </button>
+					<a th:href="@{/inserirAluno}"> 
+						<button class="btn btn-primary"> CADASTRAR ALUNO </button>
+					</a>
+					
 				</div>
 
 				<div class="bt" id="bt-buscar">
@@ -80,16 +47,13 @@
 			</div>
 		</div>
 		
-	
-	
 	</section>
-	 
-
-
 	
+	<div th:replace="fragmentos/fragmentos :: rodape"></div>
 	
-	
-
+	<script src="/webjars/jquery/3.5.1/jquery.min.js"> </script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"> </script>
+		 
 
 </body>
 </html>

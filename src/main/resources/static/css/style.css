@@ -93,6 +93,16 @@ a.nav-item:hover{
 	z-index: 105;
 }
 
+.rodape{
+	text-align: center; 
+}
+
+
+
+.container{
+	margin-top: 50px;
+}
+
 
 
 /*============================  responsividade ================================ */

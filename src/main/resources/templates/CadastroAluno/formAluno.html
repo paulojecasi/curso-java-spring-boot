@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+
+<title>Cadastro de Alunos</title>
+<meta name="author" content="Paulo Jecasi">
+<script src="https://kit.fontawesome.com/006642858d.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&family=Work+Sans&display=swap" rel="stylesheet">
+
+</head>
+<body>
+	<div th:replace="fragmentos/fragmentos :: cabecalho"> </div>
+	
+	<div class="container">
+	
+		<h4>+ Inserir Alunos </h4>
+		<hr>
+		
+			<!-- 				Nome do Aluno -->
+		
+			<form method="POST" action="/InsertAlunos" th:object="${addAluno}">
+				<div class="row">
+					<div class="col-md-6 form-group offset-md-2"> 
+						<label> Nome do Aluno: </label>
+						<input class="form-control" placeholder="Ex: Paulo Cardoso" th:field="*{nome}">
+					</div>
+				</div>
+				
+				<!-- 				Tipo de Curso -->
+				
+				<div class="row">
+					<div class="col-md-6 form-group offset-md-2"> 
+						<label> Selecione o Curso: </label>
+						<select class="form-control"> 
+							<option th:each="var_curso : ${T(br.com.alunos.Enums.Curso).values()}"
+								th:value="${var_curso}" th:text="${var_curso}"> 
+							</option>
+						
+						</select>
+					</div>
+				</div>
+				
+				<!-- 				Gerar Matricula -->
+				<div class="row">
+					<div class="col-md-6 form-group offset-md-2"> 
+						<label> Gerar Matricula: </label>
+						<input class="form-control" id="matricula" th:field="*{matricula}">
+						<button class= "btn btn-dark"
+								style="margin-top: 10px"
+								type = "button"
+								onclick="GerarMatricula();"> 
+								Gerar Matricula
+						</button>
+					</div>
+				</div>
+				
+				<!-- 				Status -->
+				<div class="row">
+					<div class="col-md-6 form-group offset-md-2"> 
+						<label> Status: </label>
+						<select class="form-control"> 
+							<option th:each="var_status : ${T(br.com.alunos.Enums.Status).values()}"
+								th:value="${var_status}" th:text="${var_status}"> 
+							</option>
+						
+						</select>
+					</div>
+				</div>
+				
+				<!-- 				Turno -->
+				<div class="row">
+					<div class="col-md-6 form-group offset-md-2"> 
+						<label> Turno: </label>
+						<select class="form-control"> 
+							<option th:each="var_turno : ${T(br.com.alunos.Enums.Turno).values()}"
+								th:value="${var_turno}" th:text="${var_turno}"> 
+							</option>
+						
+						</select>
+					</div>
+				</div>
+				
+			</form>
+		
+	</div>
+
+	<script src="js/main.js"> </script>
+	<script src="/webjars/jquery/3.5.1/jquery.min.js"> </script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"> </script>
+</body>
+</html>
