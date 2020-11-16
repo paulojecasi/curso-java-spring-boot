@@ -24,18 +24,18 @@ public class Aluno {
 	private String nome;
 	
 	@Column(name = "curso",length = 50)
-	@Enumerated(EnumType.STRING)
+//	@Enumerated(EnumType.STRING)
 	private Curso curso;
 	
 	@Column(name = "matricula",length = 15)
 	private String matricula;
 	
 	@Column(name = "status",length = 20)
-	@Enumerated(EnumType.STRING)
+//	@Enumerated(EnumType.STRING)
 	private Status status;
 	
 	@Column(name = "turno",length = 20)
-	@Enumerated(EnumType.STRING)
+//	@Enumerated(EnumType.STRING)
 	private Turno turno;
 
 	
