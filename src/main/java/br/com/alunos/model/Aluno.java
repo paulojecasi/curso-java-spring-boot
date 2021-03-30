@@ -7,6 +7,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 import br.com.alunos.Enums.Curso;
 import br.com.alunos.Enums.Status;
@@ -20,7 +22,9 @@ public class Aluno {
 	@GeneratedValue(strategy = GenerationType.AUTO)           // o Id vai ser AUTO-incremento
 	private Integer Id;
 	
-	@Column(name = "nome",length = 100)                                    // nome e tamanho do campo no BD
+	@Column(name = "nome",length = 100)                       // nome e tamanho do campo no BD
+	//@Size(min=5, max=50, message="O nome deve conter no minimo 5 caracteres")
+	//@NotBlank(message= "É obrigatório o nome do Aluno")
 	private String nome;
 	
 	@Column(name = "curso",length = 50)
@@ -28,6 +32,7 @@ public class Aluno {
 	private Curso curso;
 	
 	@Column(name = "matricula",length = 15)
+	//@NotBlank(message= "É obrigatório a Matricula, gere a Matricula do Aluno")
 	private String matricula;
 	
 	@Column(name = "status",length = 20)

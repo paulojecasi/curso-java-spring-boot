@@ -1,25 +1,5 @@
-<!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-
-<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/style.css">
-
-<title>Cadastro de Alunos</title>
-<meta name="author" content="Paulo Jecasi">
-<script src="https://kit.fontawesome.com/006642858d.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&family=Work+Sans&display=swap" rel="stylesheet">
-
-</head>
+<div th:replace="fragmentos/fragmentos :: section-header"> </div>
 <body>
-
-
-
-<!-- 	<h1> TESTE SPRING 3456 </h1> -->
-<!-- 	<h3 th:text="${msg}"></h3> -->
-	
 
 	<div th:replace="fragmentos/fragmentos :: cabecalho"> </div>
 	
@@ -32,14 +12,16 @@
 		
 			<div class="botoes">
 				<div class="bt" id="bt-cadastrar">
-					<a th:href="@{/inserirAluno}"> 
+					<a th:href="@{/viewInserirAluno}"> 
 						<button class="btn btn-primary"> CADASTRAR ALUNO </button>
 					</a>
 					
 				</div>
 
 				<div class="bt" id="bt-buscar">
-					<button class="btn btn-success"> BUSCAR ALUNO </button>
+					<a th:href="@{/viewPesquisaAlunos}"> 
+						<button class="btn btn-success"> BUSCAR ALUNO </button>
+					</a>
 				</div>
 				
 				<div class="limpar"> </div>
@@ -49,11 +31,8 @@
 		
 	</section>
 	
-	<div th:replace="fragmentos/fragmentos :: rodape"></div>
+	<div th:replace="fragmentos/fragmentos :: section-footer"></div>
 	
-	<script src="/webjars/jquery/3.5.1/jquery.min.js"> </script>
-	<script src="/webjars/bootstrap/js/bootstrap.min.js"> </script>
 		 
-
 </body>
 </html>

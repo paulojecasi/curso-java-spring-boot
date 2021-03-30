@@ -2,12 +2,10 @@ package br.com.alunos.Enums;
 
 public enum Status {
 	
-	ABERTO("Aberto"),
-	ENCERRADO("Encerrado"),
-	CANCELADO("Cancelado"),
-	TRANCADO("Trancado"),
-	JUBILADO("Jubilado"),
-	CONCLUIDO("Concluido");
+	ATIVO("ATIVO"),
+	INATIVO("INATIVO"),
+	CANCELADO("CANCELADO"),
+	TRANCADO("TRANCADO");
 	
 	private String status;
 

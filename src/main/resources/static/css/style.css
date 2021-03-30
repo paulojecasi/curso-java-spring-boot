@@ -24,7 +24,7 @@ a.nav-item:hover{
 
 .pj-section{
 /* 	background: url(img/bg-index.jpg); */
-	min-height: 700px; 
+	min-height: 550px; 
 	background-size: cover !important;
 	background-position: center;
 	background-repeat: no-repeat; 
@@ -93,6 +93,7 @@ a.nav-item:hover{
 .pj-section > .pj-container {
 	position: relative; 
 	z-index: 105;
+
 }
 
 .rodape{

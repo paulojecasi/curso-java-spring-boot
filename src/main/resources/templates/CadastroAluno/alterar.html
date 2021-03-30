@@ -1,33 +1,22 @@
-<!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-
-<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/style.css">
-
-<title>Cadastro de Alunos</title>
-<meta name="author" content="Paulo Jecasi">
-<script src="https://kit.fontawesome.com/006642858d.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&family=Work+Sans&display=swap" rel="stylesheet">
-
-</head>
+<div th:replace="fragmentos/fragmentos :: section-header"> </div>
 <body>
+
 	<div th:replace="fragmentos/fragmentos :: cabecalho"> </div>
 	
 	<div class="container">
 	
-		<h4>+ Inserir Alunos </h4>
+		<h4>Editar Alunos </h4>
 		<hr>
 		
 			<!-- 				Nome do Aluno -->
 		
-			<form method="POST" action="/InsertAlunos" th:object="${addAluno}">
+			<form method="POST" action="/alterarAluno" th:object="${altAluno}">
+				<input type="hidden" th:field="*{id}">
 				<div class="row">
 					<div class="col-md-6 form-group offset-md-2"> 
 						<label> Nome do Aluno: </label>
-						<input class="form-control" placeholder="Ex: Paulo Cardoso" th:field="*{nome}">
+						<input class="form-control" placeholder="Ex: Paulo Cardoso" th:field="*{nome}"
+						th:value="${altAluno.nome}">
 					</div>
 				</div>
 				
@@ -50,13 +39,8 @@
 					<div class="col-md-6 form-group offset-md-2"> 
 						<label> Matricula: </label>
 						<input class="form-control" id="matricula" th:field="*{matricula}" 
-								readonly=“true”>
-						<button class= "btn btn-dark"
-								style="margin-top: 10px"
-								type = "button"
-								onclick="GerarMatricula();"> 
-								Gerar Matricula
-						</button>
+								readonly="true" th:value="${altAluno.matricula}">
+					
 					</div>
 				</div>
 				
@@ -88,10 +72,10 @@
 				
 				<div class="row bt-salvar-voltar">
 					<button type="submit" class="botao-form btn btn-success offset-md-3">
-					 	Salvar
+					 	Atualizar
 					 </button>
 					 
-					 <a th:href="@{/}"> 
+					 <a th:href="@{/alunos-adicionados}"> 
 					 	<button type="button" class="botao-form btn btn-outline-danger offset-md-1">
 					 		Voltar
 					 	</button>
@@ -102,10 +86,7 @@
 		
 	</div>
 	
-	<div th:replace="fragmentos/fragmentos :: rodape"></div>
-
-	<script src="js/main.js"> </script>
-	<script src="/webjars/jquery/3.5.1/jquery.min.js"> </script>
-	<script src="/webjars/bootstrap/js/bootstrap.min.js"> </script>
+	<div th:replace="fragmentos/fragmentos :: section-footer"> </div>
+	
 </body>
 </html>

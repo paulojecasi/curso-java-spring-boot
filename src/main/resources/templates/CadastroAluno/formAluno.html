@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-
-<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/style.css">
-
-<title>Cadastro de Alunos</title>
-<meta name="author" content="Paulo Jecasi">
-<script src="https://kit.fontawesome.com/006642858d.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&family=Work+Sans&display=swap" rel="stylesheet">
-
-</head>
+<div th:replace="fragmentos/fragmentos :: section-header"> </div>
 <body>
 	<div th:replace="fragmentos/fragmentos :: cabecalho"> </div>
 	
@@ -23,11 +9,17 @@
 		
 			<!-- 				Nome do Aluno -->
 		
-			<form method="POST" action="/InsertAlunos" th:object="${addAluno}">
+			<form method="post" action="/inserirAluno" th:object="${addAluno}" autocomplete="off">
 				<div class="row">
-					<div class="col-md-6 form-group offset-md-2"> 
+					
+					<div class="col-md-6 form-group offset-md-2">
+					 
+						<div class= "alert alert-danger" role="alert" th:if="${#fields.hasErrors('nome')}">
+							<label class="validation-message" th:errors="*{nome}"></label>
+						</div>
+						
 						<label> Nome do Aluno: </label>
-						<input class="form-control" placeholder="Ex: Paulo Cardoso" th:field="*{nome}">
+						<input class="form-control" placeholder="Ex: Paulo Cardoso" th:field="*{nome}" required>
 					</div>
 				</div>
 				
@@ -48,9 +40,14 @@
 				<!-- 				Gerar Matricula -->
 				<div class="row">
 					<div class="col-md-6 form-group offset-md-2"> 
+					
+						<div class= "alert alert-danger" role="alert" th:if="${#fields.hasErrors('matricula')}" >
+							<label class="validation-message" th:errors="*{matricula}"></label>
+						</div>
+						
 						<label> Matricula: </label>
 						<input class="form-control" id="matricula" th:field="*{matricula}" 
-								readonly=â€œtrueâ€>
+								readonly=“true” required>
 						<button class= "btn btn-dark"
 								style="margin-top: 10px"
 								type = "button"
@@ -102,10 +99,7 @@
 		
 	</div>
 	
-	<div th:replace="fragmentos/fragmentos :: rodape"></div>
+	<div th:replace="fragmentos/fragmentos :: section-footer"> </div>
 
-	<script src="js/main.js"> </script>
-	<script src="/webjars/jquery/3.5.1/jquery.min.js"> </script>
-	<script src="/webjars/bootstrap/js/bootstrap.min.js"> </script>
 </body>
 </html>

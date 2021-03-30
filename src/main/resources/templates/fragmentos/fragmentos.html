@@ -1,24 +1,27 @@
-<!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-
-<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/style.css">
-
-<title>Cadastro de Alunos</title>
-<meta name="author" content="Paulo Jecasi">
-<script src="https://kit.fontawesome.com/006642858d.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&family=Work+Sans&display=swap" rel="stylesheet">
-
-</head>
+<section th:fragment="section-header"> 
+	<!DOCTYPE html>
+	<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	
+	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/style.css">
+	
+	<title>SISTEMA DE ALUNOS</title>
+	<meta name="author" content="Paulo Jecasi">
+	<script src="https://kit.fontawesome.com/006642858d.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&family=Work+Sans&display=swap" rel="stylesheet">
+	
+	</head>
+</section>
 <body>
 	
+	<!--  CABEÇALHO -->
 	<header th:fragment="cabecalho"> 
 		<nav class="navbar navbar-expand-lg navbar-dark">
 			<a class="navbar-brand" th:href="@{/}">
-		 		<img src="img/logo-header-site.png"/>
+		 		<img src="/img/logo-header-site.png"/>
 			</a>
 		 	
 			<button class="navbar-toggler" 
@@ -34,11 +37,16 @@
 		 			<i class="fas fa-home"></i>
 		 			 Home
 		 		</a>
-		 		<a class="nav-item nav-link" th:href="@{/inserirAluno}">
+		 		<a class="nav-item nav-link" th:href="@{/viewInserirAluno}">
 		 			<i class="fas fa-user-graduate"></i>
 		 			 Cadastrar Aluno
 		 		</a>
-		 		<a class="nav-item nav-link">
+		 		
+		 		<a class="nav-item nav-link" th:href="@{/alunos-adicionados}">
+		 			<i class="fas fa-search"></i> 
+		 			Ultimos Alunos Cadastrados
+		 		</a>
+		 		<a class="nav-item nav-link" th:href="@{/viewPesquisaAlunos}">
 		 			<i class="fas fa-search"></i> 
 		 			Pesquisar Aluno
 		 		</a>
@@ -52,14 +60,18 @@
 		</nav>
 	</header>
 	
-	<footer th:fragment="rodape">
-		<div class="rodape">
-			<span> Todos os Direitor Reservados - 2020 &copy; Paulo Jecasi </span>
-		</div>
-	</footer>
-
-
-	<script src="/webjars/jquery/3.5.1/jquery.min.js"> </script>
-	<script src="/webjars/bootstrap/js/bootstrap.min.js"> </script>
+	
+	<section th:fragment="section-footer">
+		<!--  RODAPÉ -->
+		<footer>
+			<div class="rodape">
+				<span> Todos os Direitor Reservados - 2020 &copy; Paulo Jecasi </span>
+			</div>
+		</footer>
+		
+		<script src="js/main.js"> </script>	
+		<script src="/webjars/jquery/3.5.1/jquery.min.js"> </script>
+		<script src="/webjars/bootstrap/js/bootstrap.min.js"> </script>
+	</section>
 </body>
 </html>
