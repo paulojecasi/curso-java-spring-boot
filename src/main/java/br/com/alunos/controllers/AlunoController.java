@@ -107,6 +107,17 @@ public class AlunoController {
 		return mv;
 	}
 	
+	@GetMapping("alunos-cancelados")
+	public ModelAndView listagelAlunosCancelados() {
+		mv.setViewName("CadastroAluno/listarAlunos");
+		mv.addObject("titulo","Listagem de Alunos Cancelados");
+		mv.addObject("alunosListagem", alunorepositorio.findByStatusCancelado());
+		return mv; 
+		
+	}
+	
+
+	
 	
 	
 	

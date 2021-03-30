@@ -14,5 +14,7 @@ public interface AlunosDao extends JpaRepository<Aluno, Integer> {
 	
 	@Query("select p from Aluno p where p.status= '1'")
 	public List<Aluno> findByStatusInativos();
-	
+
+	@Query("select p from Aluno p where p.status ='2'")
+	public List<Aluno> findByStatusCancelado();
 }
